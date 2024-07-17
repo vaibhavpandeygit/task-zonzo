@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "john@123##",
+    "post": "Enjoying the sunny weather!",
+    "likes": 120,
+    "dislikes": 10,
+    "profile": "https://randomuser.me/api/portraits/men/1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "password": "jane@123##",
+    "post": "Just baked some delicious cookies.",
+    "likes": 80,
+    "dislikes": 5,
+    "profile": "https://randomuser.me/api/portraits/women/2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Alice Johnson",
+    "email": "alice@example.com",
+    "password": "alice@123##",
+    "post": "Started a new painting today.",
+    "likes": 60,
+    "dislikes": 8,
+    "profile": "https://randomuser.me/api/portraits/women/3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Michael Brown",
+    "email": "michael@example.com",
+    "password": "michael@123##",
+    "post": "Just finished reading an amazing book.",
+    "likes": 90,
+    "dislikes": 22,
+    "profile": "https://randomuser.me/api/portraits/men/34.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Chris Green",
+    "email": "chris@example.com",
+    "password": "chris@123##",
+    "post": "Learning how to cook new recipes.",
+    "likes": 100,
+    "dislikes": 15,
+    "profile": "https://randomuser.me/api/portraits/men/5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Emma White",
+    "email": "emma@example.com",
+    "password": "emma@123##",
+    "post": "Had a great time hiking this weekend.",
+    "likes": 150,
+    "dislikes": 12,
+    "profile": "https://randomuser.me/api/portraits/women/6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Oliver Black",
+    "email": "oliver@example.com",
+    "password": "oliver@123##",
+    "post": "Excited for the new movie release!",
+    "likes": 85,
+    "dislikes": 18,
+    "profile": "https://randomuser.me/api/portraits/men/7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Sophia Blue",
+    "email": "sophia@example.com",
+    "password": "sophia@123##",
+    "post": "Gardening is my new hobby.",
+    "likes": 70,
+    "dislikes": 9,
+    "profile": "https://randomuser.me/api/portraits/women/8.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Liam Gray",
+    "email": "liam@example.com",
+    "password": "liam@123##",
+    "post": "Working on a new project.",
+    "likes": 95,
+    "dislikes": 11,
+    "profile": "https://randomuser.me/api/portraits/men/9.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Mia Violet",
+    "email": "mia@example.com",
+    "password": "mia@123##",
+    "post": "Trying out yoga for the first time.",
+    "likes": 110,
+    "dislikes": 7,
+    "profile": "https://randomuser.me/api/portraits/women/10.jpg"
+  }
+]
