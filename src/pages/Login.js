@@ -27,7 +27,7 @@ const Login = () => {
 
     const handleSubmit= (e)=>{
       e.preventDefault()
-
+      
       const userFound = users.find((e)=> e.email === user.email)
       
       if(userFound){
@@ -36,6 +36,8 @@ const Login = () => {
           users[userIndex].token = token()
           dispatch(login({
             name: users[userIndex].name,
+            designation: users[userIndex].designation,
+            about: users[userIndex].about,
             email: users[userIndex].email,
             phone: users[userIndex].phone,
             token: users[userIndex].token

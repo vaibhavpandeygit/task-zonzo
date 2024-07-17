@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
-// import { isAuthenticated } from '../helpFunc/isAuthenticated';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
-const Nav = (props,{children}) => {
-  
-  let isAuthorized = props.isAuthorized
-  console.log(isAuthorized)
+
+const Nav = () => {
+
+  const Navigate = useNavigate()
+
+  const data = useSelector(state => state.auth)
+  var isAuthorized = data.isAuthenticated
+
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar p-3 navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <Link to='/' className="navbar-brand" href="#">
             Zonzo-Sample
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -47,7 +51,6 @@ const Nav = (props,{children}) => {
           </div>
         </div>
       </nav>
-      {children}
     </div>
   );
 }

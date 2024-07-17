@@ -1,21 +1,41 @@
 //Protected Page
-
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductCard from '../components/ProductCard'
-import Nav from '../components/Nav'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const Products = () => {
+  const Navigate = useNavigate()
+  const data = useSelector(state => state.auth)
+  const isAuthorized = data.isAuthenticated
 
-  const getProduct=()=>{
-    const response = axios.get('https://fakestoreapi.com/products');
-    console.log(response.data)
+  const [products, setProducts] = useState([])
+
+  const getProduct= async()=>{
+    const response = await axios.get('https://fakestoreapi.com/products');
+    setProducts(response.data)
   }
+
   
+  useEffect(() => {
+    if (!isAuthorized) {
+      Navigate("/login");
+    }
+    getProduct()
+  },[]);
+
   return (
+    <div>
+      <h1 style={{"fontSize":"67px"}} className='text-black text-center'>Products</h1>
       <div className="container">
-        <ProductCard />
+      <div className="row">
+        {products.map((ele) => (
+          <ProductCard key={ele.id} ele={ele} />
+        ))}
       </div>
+    </div>
+    </div>
   );
 }
 

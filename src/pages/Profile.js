@@ -1,33 +1,31 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { isAuthenticated } from '../helpFunc/isAuthenticated'
 import { useNavigate } from 'react-router-dom'
 import { logout } from '../redux/authSlice'
 import Nav from '../components/Nav'
 
 const Profile = () => {
     const Navigate = useNavigate()
+    const Dispatch = useDispatch()
 
-    const data = useSelector(state=>state.auth)
-    console.log(data)
-   
+    const data = useSelector(state => state.auth)
+    var isAuthorized = data.isAuthenticated
+  
     useEffect(()=>{
-        const isAuthorized = isAuthenticated();
         if(!isAuthorized){
             Navigate('/register')
         }
     },[])
 
     const handleLogout=()=>{
-      localStorage.removeItem('user')
+      Dispatch(logout())
       Navigate('/login')
     }
 
   return (
 
       <div className='container mt-4'> 
-      <h1>Hello</h1>
-      {/* <div className="page-content page-container" id="page-content">
+      <div className="page-content page-container" id="page-content">
         <div className="padding">
           <div className="row container d-flex justify-content-center">
             <div className="col-xl-6 col-md-12">
@@ -42,8 +40,8 @@ const Profile = () => {
                           alt="User-Profile-Image"
                         />
                       </div>
-                      <h6 className="f-w-600 text-black">{data.name}</h6>
-                      <p className='text-black'>{data.designation}</p>
+                      <h6 className="f-w-600 text-black">{data.auth.name}</h6>
+                      <p className='text-black'>{data.auth.designation}</p>
                       <i className=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                     </div>
                   </div>
@@ -55,11 +53,11 @@ const Profile = () => {
                       <div className="row">
                         <div className="col-sm-6">
                           <p className="m-b-10 f-w-600">Email</p>
-                          <h6 className="text-muted f-w-400">{data.email}</h6>
+                          <h6 className="text-muted f-w-400">{data.auth.email}</h6>
                         </div>
                         <div className="col-sm-6">
                           <p className="m-b-10 f-w-600">Phone</p>
-                          <h6 className="text-muted f-w-400">{data.phone}</h6>
+                          <h6 className="text-muted f-w-400">{data.auth.phone}</h6>
                         </div>
                       </div>
                       <h6 className="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">
@@ -67,7 +65,7 @@ const Profile = () => {
                       </h6>
                       <div className="row">
                         <div className="col-sm-6">
-                          <p className="m-b-10 f-w-600">{data.about}</p>
+                          <p className="m-b-10 f-w-600">{data.auth.about}</p>
                         </div>
                         <div className="col-sm-6">
                           <button onClick={handleLogout} className="btn btn-danger">Logout</button>
@@ -127,7 +125,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

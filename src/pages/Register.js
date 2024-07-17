@@ -20,8 +20,6 @@ const Register = () => {
     password: "",
     token: ""
   })
-  
-  console.log(useSelector(state=>state))
 
   const handleChange=(e)=>{
     const {name, value} = e.target
@@ -43,7 +41,8 @@ const Register = () => {
     else if(findUser){
       alert("User allready registered")
     }
-    console.log(users)
+
+    Navigate('/login')
   }
   const isAuthorized = isAuthenticated()
   useEffect(()=>{  
@@ -65,7 +64,7 @@ const Register = () => {
                   <input
                     type="text"
                     name='name'
-                    
+                    required
                     onChange={handleChange}
                     className="form-control form-control-lg"
                     placeholder="Enter your name"
@@ -79,7 +78,7 @@ const Register = () => {
                   <input
                     type="email"
                     name='email'
-                    
+                    required
                     onChange={handleChange}
                     className="form-control form-control-lg"
                     placeholder="Enter a valid email address"
@@ -93,7 +92,7 @@ const Register = () => {
                   <input
                     type="text"
                     name='designation'
-                    
+                    required
                     onChange={handleChange}
                     className="form-control form-control-lg"
                     placeholder="Ex - Web Developer"
@@ -107,7 +106,7 @@ const Register = () => {
                   <input
                     type="text"
                     name='about'
-                    
+                    required
                     onChange={handleChange}
                     className="form-control form-control-lg"
                     placeholder="ex - I like to work at very calm and nice place"
@@ -122,7 +121,7 @@ const Register = () => {
                   <input
                     type="tel"
                     name='phone'
-                    
+                    required
                     onChange={handleChange}
                     className="form-control form-control-lg"
                     placeholder="Enter a valid phone number"
@@ -136,7 +135,7 @@ const Register = () => {
                   <input
                     type="password"
                     name='password'
-                    
+                    required
                     onChange={handleChange}
                     className="form-control form-control-lg"
                     placeholder="Enter password"
